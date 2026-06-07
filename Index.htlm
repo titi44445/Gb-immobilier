@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GB Immobilier — Saint-Dizier</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--noir:#0d0d0d;--blanc:#f8f5f0;--or:#c8a96e;--or-clair:#e8d5a8;--gris:#6b6b6b;--gris-clair:#ebebeb;--rouge:#e05c5c;--vert:#5cad7b;--fond:#faf8f5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--fond);color:var(--noir);overflow-x:hidden}
+header{background:var(--noir);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:72px;position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,.4)}
+.logo{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:var(--blanc);letter-spacing:-.5px}
+.logo span{color:var(--or)}
+.header-contact{color:var(--or-clair);font-size:.85rem;text-align:right;line-height:1.4}
+.header-contact strong{color:var(--or);display:block;font-size:1rem}
+.hero{background:linear-gradient(135deg,#0d0d0d 0%,#1a1a2e 50%,#16213e 100%);padding:80px 40px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c8a96e' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--blanc);position:relative;margin-bottom:12px}
+.hero h1 em{color:var(--or);font-style:normal}
+.hero p{color:#aaa;font-size:1.05rem;position:relative;margin-bottom:40px}
+.matcher-box{background:rgba(255,255,255,.04);border:1px solid rgba(200,169,110,.3);border-radius:16px;padding:28px 32px;max-width:860px;margin:0 auto;position:relative;backdrop-filter:blur(10px)}
+.matcher-title{font-family:'Playfair Display',serif;color:var(--or);font-size:1.1rem;margin-bottom:20px;text-align:left}
+.matcher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.matcher-field label{display:block;color:#888;font-size:.75rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.matcher-field select,.matcher-field input{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(200,169,110,.25);border-radius:8px;padding:10px 14px;color:var(--blanc);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border .2s}
+.matcher-field select:focus,.matcher-field input:focus{border-color:var(--or)}
+.matcher-field select option{background:#1a1a2e}
+.btn-match{margin-top:20px;width:100%;background:var(--or);color:var(--noir);border:none;border-radius:10px;padding:14px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;transition:background .2s,transform .1s}
+.btn-match:hover{background:var(--or-clair);transform:translateY(-1px)}
+.tabs-section{padding:40px 40px 0;max-width:1400px;margin:0 auto}
+.tabs{display:flex;gap:8px;border-bottom:2px solid var(--gris-clair);margin-bottom:32px}
+.tab-btn{padding:12px 24px;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:500;color:var(--gris);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;border-radius:6px 6px 0 0}
+.tab-btn:hover{color:var(--noir);background:rgba(200,169,110,.1)}
+.tab-btn.active{color:var(--or);border-bottom-color:var(--or);background:rgba(200,169,110,.08);font-weight:700}
+.tab-count{background:var(--or);color:var(--noir);font-size:.7rem;font-weight:700;border-radius:20px;padding:2px 7px;margin-left:6px}
+.quick-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;padding:0 40px;max-width:1400px;margin-left:auto;margin-right:auto}
+.qf-btn{padding:7px 16px;border:1.5px solid var(--gris-clair);border-radius:20px;background:#fff;font-size:.82rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;color:#444}
+.qf-btn:hover,.qf-btn.active{border-color:var(--or);color:var(--or);background:rgba(200,169,110,.08)}
+.count-bar{padding:0 40px 16px;max-width:1400px;margin:0 auto;color:var(--gris);font-size:.88rem}
+.count-bar strong{color:var(--noir)}
+.properties-section{padding:0 40px 60px;max-width:1400px;margin:0 auto}
+.properties-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.property-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);transition:transform .25s,box-shadow .25s;position:relative;display:flex;flex-direction:column;cursor:pointer}
+.property-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.13)}
+.property-card.hidden{display:none}
+.card-img-wrap{position:relative;width:100%;height:200px;overflow:hidden;background:linear-gradient(135deg,#e8e0d0,#c8bca8)}
+.card-img{width:100%;height:200px;object-fit:cover;display:block}
+.card-img-placeholder{width:100%;height:200px;background:linear-gradient(135deg,#e8e0d0,#c8bca8);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:3rem;gap:8px}
+.card-img-placeholder small{font-size:.72rem;color:#999;font-family:'DM Sans',sans-serif}
+.gallery-dots{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:2}
+.gallery-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.6);cursor:pointer;transition:background .2s,transform .2s;border:none;padding:0}
+.gallery-dot.active{background:#fff;transform:scale(1.3)}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.4);color:#fff;border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:3;opacity:0;transition:opacity .2s;backdrop-filter:blur(4px)}
+.card-img-wrap:hover .gallery-nav{opacity:1}
+.gallery-nav.prev{left:8px}
+.gallery-nav.next{right:52px}
+.photo-count-badge{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.55);color:#fff;font-size:.65rem;font-weight:700;padding:3px 7px;border-radius:10px;backdrop-filter:blur(4px);z-index:2}
+.card-badge{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:20px;font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;backdrop-filter:blur(4px)}
+.badge-location{background:rgba(61,122,191,.9);color:#fff}
+.badge-vente{background:rgba(200,169,110,.9);color:#0d0d0d}
+.badge-commerce{background:rgba(92,173,123,.9);color:#fff}
+.badge-baisse{position:absolute;top:14px;right:58px;background:rgba(224,92,92,.9);color:#fff;padding:4px 10px;border-radius:20px;font-size:.7rem;font-weight:700;backdrop-filter:blur(4px)}
+.fav-ring-btn{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border:2.5px solid #ddd;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .18s,border-color .18s,box-shadow .18s;box-shadow:0 2px 8px rgba(0,0,0,.15);overflow:visible;padding:0;flex-direction:column;gap:0}
+.fav-ring-btn:hover{transform:scale(1.12);box-shadow:0 4px 14px rgba(0,0,0,.22)}
+.fav-ring-btn.liked{border-color:var(--rouge)}
+.fav-ring-btn svg.heart-svg{width:20px;height:20px;display:block}
+.fav-ring-btn .pct-txt{font-size:.44rem;font-weight:800;line-height:1;margin-top:1px;pointer-events:none}
+.fav-ring-btn svg.ring-svg{position:absolute;inset:-3px;width:calc(100% + 6px);height:calc(100% + 6px);border-radius:50%;pointer-events:none;overflow:visible}
+.ring-track{fill:none;stroke:#eee;stroke-width:3}
+.ring-fill{fill:none;stroke-width:3;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.card-body{padding:16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.card-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--noir);line-height:1.3}
+.card-location{font-size:.82rem;color:var(--gris)}
+.card-specs{display:flex;gap:8px;flex-wrap:wrap}
+.spec-tag{background:var(--fond);border:1px solid var(--gris-clair);padding:4px 10px;border-radius:6px;font-size:.78rem;color:#555}
+.card-price{font-size:1.35rem;font-weight:700;color:var(--noir);margin-top:auto}
+.card-price span{font-size:.8rem;font-weight:400;color:var(--gris)}
+.card-footer{padding:12px 16px;border-top:1px solid var(--gris-clair);display:flex;align-items:center;justify-content:space-between}
+.ref-label{font-size:.72rem;color:#999}
+.btn-voir{padding:8px 18px;background:var(--noir);color:var(--blanc);border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s;display:inline-block}
+.btn-voir:hover{background:var(--or);color:var(--noir)}
+.map-section{padding:0 40px 60px;max-width:1400px;margin:0 auto;display:none}
+.map-section.active{display:block}
+.map-wrapper{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.12)}
+.map-wrapper iframe{width:100%;height:560px;border:none;display:block}
+.map-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;padding:14px 20px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.06);align-items:center}
+.map-legend span{font-size:.83rem;display:flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block}
+.dot-loc{background:#3d7abf}.dot-vte{background:#c8a96e}.dot-com{background:#5cad7b}
+.map-info{color:var(--gris);font-size:.82rem;margin-left:auto}
+.fav-section{padding:0 40px 60px;max-width:1400px;margin:0 auto;display:none}
+.fav-section.active{display:block}
+.empty-fav{text-align:center;padding:80px 20px;color:var(--gris)}
+.empty-fav .big-heart{font-size:4rem;margin-bottom:16px}
+.admin-trigger{position:fixed;bottom:24px;right:24px;width:42px;height:42px;border-radius:50%;background:rgba(13,13,13,.7);border:1.5px solid rgba(200,169,110,.4);color:var(--or);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:900;transition:all .2s;backdrop-filter:blur(6px)}
+.admin-trigger:hover{background:var(--noir);border-color:var(--or);transform:scale(1.1)}
+.admin-login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:3000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px)}
+.admin-login-overlay.open{display:flex}
+.admin-login-box{background:#fff;border-radius:20px;padding:40px;width:360px;text-align:center;animation:fadeIn .25s}
+.admin-login-box h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:8px}
+.admin-login-box p{color:var(--gris);font-size:.88rem;margin-bottom:24px}
+.admin-login-box input{width:100%;padding:12px 16px;border:1.5px solid var(--gris-clair);border-radius:10px;font-size:1rem;font-family:'DM Sans',sans-serif;outline:none;margin-bottom:12px;transition:border .2s}
+.admin-login-box input:focus{border-color:var(--or)}
+.admin-login-box .err{color:var(--rouge);font-size:.82rem;margin-bottom:10px;min-height:18px}
+.admin-login-box .btn-login{width:100%;padding:13px;background:var(--noir);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}
+.admin-login-box .btn-login:hover{background:var(--or);color:var(--noir)}
+.admin-login-box .btn-cancel{margin-top:10px;background:none;border:none;color:var(--gris);font-size:.85rem;cursor:pointer;font-family:'DM Sans',sans-serif}
+.admin-panel{position:fixed;top:0;right:-440px;width:440px;height:100vh;background:#fff;z-index:2500;box-shadow:-4px 0 30px rgba(0,0,0,.18);transition:right .3s ease;display:flex;flex-direction:column;overflow:hidden}
+.admin-panel.open{right:0}
+.admin-panel-header{background:var(--noir);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.admin-panel-header h3{font-family:'Playfair Display',serif;color:var(--or);font-size:1.2rem}
+.admin-close{background:none;border:none;color:#888;font-size:1.4rem;cursor:pointer}
+.admin-close:hover{color:#fff}
+.admin-tabs{display:flex;border-bottom:1px solid var(--gris-clair);flex-shrink:0}
+.admin-tab{flex:1;padding:12px;border:none;background:none;font-family:'DM Sans',sans-serif;font-size:.85rem;cursor:pointer;color:var(--gris);font-weight:500;transition:all .2s;border-bottom:2px solid transparent}
+.admin-tab.active{color:var(--or);border-bottom-color:var(--or);font-weight:700}
+.admin-content{flex:1;overflow-y:auto;padding:20px}
+.admin-bien-item{border:1px solid var(--gris-clair);border-radius:10px;padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:border-color .2s}
+.admin-bien-item:hover{border-color:var(--or)}
+.admin-bien-thumb{width:44px;height:44px;border-radius:8px;object-fit:cover;flex-shrink:0;background:linear-gradient(135deg,#e8e0d0,#c8bca8);display:flex;align-items:center;justify-content:center;font-size:1.2rem;overflow:hidden}
+.admin-bien-thumb img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.admin-bien-info{flex:1;min-width:0}
+.admin-bien-title{font-weight:700;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.admin-bien-meta{font-size:.74rem;color:var(--gris);display:flex;gap:8px;margin-top:2px;align-items:center;flex-wrap:wrap}
+.admin-bien-ref{background:#f0f0f0;border-radius:4px;padding:1px 6px;font-size:.7rem;font-weight:700}
+.photo-badge{background:rgba(200,169,110,.15);color:var(--or);border-radius:4px;padding:1px 6px;font-size:.68rem;font-weight:700;border:1px solid rgba(200,169,110,.3)}
+.admin-bien-actions{display:flex;gap:6px;flex-shrink:0}
+.btn-icon{width:32px;height:32px;border-radius:8px;border:1.5px solid var(--gris-clair);background:none;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.btn-icon:hover{border-color:var(--or);background:rgba(200,169,110,.1)}
+.btn-icon.del:hover{border-color:var(--rouge);background:rgba(224,92,92,.1)}
+.btn-icon.baisse-on{border-color:var(--rouge);background:rgba(224,92,92,.08);color:var(--rouge)}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;color:var(--gris);margin-bottom:5px;font-weight:600}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:10px 12px;border:1.5px solid var(--gris-clair);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border .2s;background:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--or)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-check{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.form-check input[type=checkbox]{width:18px;height:18px;cursor:pointer;accent-color:var(--or)}
+.form-check label{font-size:.9rem;cursor:pointer}
+.btn-save{width:100%;padding:13px;background:var(--vert,#5cad7b);color:#fff;border:none;border-radius:10px;font-size:1rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:8px;transition:background .2s}
+.btn-save:hover{background:#4a9a6a}
+.btn-cancel-form{width:100%;padding:11px;background:none;border:1.5px solid var(--gris-clair);border-radius:10px;font-size:.9rem;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:6px;transition:border-color .2s}
+.btn-cancel-form:hover{border-color:var(--or)}
+.admin-section-title{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.btn-add-new{padding:8px 16px;background:var(--noir);color:var(--blanc);border:none;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}
+.btn-add-new:hover{background:var(--or);color:var(--noir)}
+.admin-search{width:100%;padding:9px 12px;border:1.5px solid var(--gris-clair);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;margin-bottom:14px}
+.admin-search:focus{border-color:var(--or)}
+.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.stat-box{background:var(--fond);border-radius:10px;padding:14px;text-align:center}
+.stat-box .stat-n{font-size:1.6rem;font-weight:900;font-family:'Playfair Display',serif;color:var(--or)}
+.stat-box .stat-l{font-size:.72rem;color:var(--gris);text-transform:uppercase;letter-spacing:.5px}
+.toast{position:fixed;bottom:80px;right:24px;background:var(--noir);color:var(--or);padding:12px 20px;border-radius:10px;font-size:.88rem;font-weight:600;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
+.toast.show{opacity:1}
+.photo-upload-section{background:var(--fond);border-radius:12px;padding:16px;margin-bottom:14px;border:1.5px solid var(--gris-clair)}
+.photo-upload-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.photo-upload-header span{font-size:.75rem;text-transform:uppercase;letter-spacing:.8px;color:var(--gris);font-weight:600}
+.photo-upload-header small{font-size:.7rem;color:#aaa}
+.photo-drop-zone{border:2px dashed var(--gris-clair);border-radius:10px;padding:24px 16px;text-align:center;cursor:pointer;transition:all .25s;background:#fff;position:relative}
+.photo-drop-zone:hover,.photo-drop-zone.dragover{border-color:var(--or);background:rgba(200,169,110,.04)}
+.photo-drop-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.photo-drop-icon{font-size:2rem;margin-bottom:8px}
+.photo-drop-text{font-size:.85rem;color:var(--gris);font-weight:500}
+.photo-drop-sub{font-size:.72rem;color:#bbb;margin-top:4px}
+.photo-preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.photo-preview-item{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:#eee;cursor:grab}
+.photo-preview-item img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-preview-item .remove-photo{position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;background:rgba(224,92,92,.9);color:#fff;border:none;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center;font-weight:700;line-height:1;transition:transform .15s}
+.photo-preview-item .remove-photo:hover{transform:scale(1.15)}
+.photo-preview-item .main-badge{position:absolute;bottom:4px;left:4px;background:rgba(200,169,110,.9);color:#0d0d0d;font-size:.6rem;font-weight:800;padding:2px 6px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px}
+.photo-preview-item .set-main-btn{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;padding:2px 6px;border-radius:4px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;opacity:0;transition:opacity .2s}
+.photo-preview-item:hover .set-main-btn{opacity:1}
+.photo-preview-item.is-main{outline:2.5px solid var(--or);outline-offset:-2px}
+.photo-counter{font-size:.75rem;color:var(--gris);margin-top:8px;text-align:center}
+.url-photo-toggle{font-size:.78rem;color:var(--or);cursor:pointer;text-decoration:underline;margin-top:6px;display:inline-block;background:none;border:none;font-family:'DM Sans',sans-serif}
+.gallery-modal{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:4000;display:none;align-items:center;justify-content:center;flex-direction:column}
+.gallery-modal.open{display:flex}
+.gallery-modal-img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:8px;user-select:none}
+.gallery-modal-nav{display:flex;align-items:center;gap:24px;margin-top:20px}
+.gallery-modal-btn{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.gallery-modal-btn:hover{background:rgba(200,169,110,.3);border-color:var(--or)}
+.gallery-modal-counter{color:#888;font-size:.9rem;min-width:60px;text-align:center}
+.gallery-modal-close{position:absolute;top:20px;right:24px;background:none;border:none;color:#888;font-size:1.8rem;cursor:pointer;transition:color .2s}
+.gallery-modal-close:hover{color:#fff}
+.gallery-modal-thumbs{display:flex;gap:8px;margin-top:16px;max-width:90vw;overflow-x:auto;padding:4px}
+.gallery-thumb{width:56px;height:42px;border-radius:5px;object-fit:cover;cursor:pointer;opacity:.5;transition:opacity .2s,outline .2s;flex-shrink:0}
+.gallery-thumb.active{opacity:1;outline:2px solid var(--or)}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:20px;max-width:700px;width:100%;max-height:90vh;overflow-y:auto;animation:fadeIn .25s}
+@keyframes fadeIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-header{padding:24px 28px 16px;border-bottom:1px solid var(--gris-clair);display:flex;justify-content:space-between;align-items:flex-start}
+.modal-header h2{font-family:'Playfair Display',serif;font-size:1.4rem}
+.modal-close-btn{background:none;border:none;font-size:1.4rem;cursor:pointer;color:#999}
+.modal-gallery{width:100%;height:280px;overflow:hidden;position:relative;background:#f0ece4}
+.modal-gallery-img{width:100%;height:100%;object-fit:cover}
+.modal-gallery-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#e8e0d0,#c8bca8)}
+.modal-gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);color:#fff;border:none;width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;transition:background .2s;backdrop-filter:blur(4px)}
+.modal-gallery-nav:hover{background:rgba(0,0,0,.7)}
+.modal-gallery-nav.prev{left:12px}
+.modal-gallery-nav.next{right:12px}
+.modal-gallery-ctr{position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.5);color:#fff;font-size:.72rem;padding:3px 8px;border-radius:8px}
+.modal-gallery-dots{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:flex;gap:5px}
+.modal-gallery-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;border:none;transition:background .2s}
+.modal-gallery-dot.active{background:#fff}
+.modal-gallery-expand{position:absolute;top:10px;right:12px;background:rgba(0,0,0,.45);color:#fff;border:none;border-radius:8px;padding:5px 9px;font-size:.75rem;cursor:pointer;backdrop-filter:blur(4px);transition:background .2s}
+.modal-gallery-expand:hover{background:rgba(0,0,0,.7)}
+.modal-body{padding:24px 28px}
+.modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.modal-spec{background:var(--fond);border-radius:10px;padding:12px 16px}
+.modal-spec-label{font-size:.73rem;color:var(--gris);text-transform:uppercase;letter-spacing:.8px}
+.modal-spec-value{font-weight:700;font-size:1.05rem;margin-top:2px}
+.modal-price{font-size:2rem;font-weight:900;font-family:'Playfair Display',serif;color:var(--noir);margin-bottom:8px}
+.modal-footer{padding:20px 28px 28px;display:flex;gap:12px}
+.btn-primary{flex:1;padding:14px;background:var(--or);color:var(--noir);border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;text-decoration:none;text-align:center;display:block;transition:background .2s}
+.btn-primary:hover{background:var(--or-clair)}
+.btn-secondary{flex:1;padding:14px;background:none;color:var(--noir);border:2px solid var(--gris-clair);border-radius:10px;font-weight:600;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;text-align:center;transition:border-color .2s}
+.btn-secondary:hover{border-color:var(--or);color:var(--or)}
+footer{background:var(--noir);color:#888;text-align:center;padding:32px 20px;font-size:.85rem;line-height:1.8}
+footer strong{color:var(--or)}
+footer a{color:var(--or-clair);text-decoration:none}
+/* ═══ BOUTON CONTACTER ═══ */
+.btn-contact{flex:1;padding:14px;background:var(--or);color:var(--noir);border:none;border-radius:10px;font-weight:700;font-size:1rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}
+.btn-contact:hover{background:var(--or-clair)}
+
+/* ═══ MODAL CONTACT ═══ */
+.contact-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:5000;display:none;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px)}
+.contact-overlay.open{display:flex}
+.contact-modal{background:#fff;border-radius:20px;max-width:520px;width:100%;max-height:92vh;overflow-y:auto;animation:fadeIn .25s;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+.contact-modal-header{background:var(--noir);padding:22px 28px 18px;border-radius:20px 20px 0 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.contact-modal-header h3{font-family:'Playfair Display',serif;color:var(--blanc);font-size:1.2rem;line-height:1.3}
+.contact-modal-header p{color:#888;font-size:.78rem;margin-top:4px}
+.contact-modal-close{background:none;border:none;color:#666;font-size:1.4rem;cursor:pointer;line-height:1;flex-shrink:0;transition:color .2s}
+.contact-modal-close:hover{color:#fff}
+.contact-modal-body{padding:24px 28px}
+
+/* Chip bien */
+.contact-bien-chip{display:flex;align-items:center;gap:10px;background:var(--fond);border:1px solid var(--gris-clair);border-radius:10px;padding:10px 14px;margin-bottom:20px}
+.contact-bien-chip-icon{font-size:1.3rem}
+.contact-bien-chip-info{flex:1;min-width:0}
+.contact-bien-chip-title{font-weight:700;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.contact-bien-chip-ref{font-size:.72rem;color:var(--gris)}
+
+/* Choix message */
+.contact-type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.contact-type-btn{border:2px solid var(--gris-clair);border-radius:12px;padding:12px 10px;background:#fff;cursor:pointer;text-align:center;transition:all .2s;font-family:'DM Sans',sans-serif}
+.contact-type-btn:hover{border-color:var(--or);background:rgba(200,169,110,.05)}
+.contact-type-btn.selected{border-color:var(--or);background:rgba(200,169,110,.08)}
+.contact-type-btn .ctb-icon{font-size:1.4rem;margin-bottom:5px}
+.contact-type-btn .ctb-label{font-size:.8rem;font-weight:600;color:var(--noir)}
+.contact-type-btn .ctb-sub{font-size:.7rem;color:var(--gris);margin-top:2px}
+
+/* Champs */
+.cf-group{margin-bottom:14px}
+.cf-group label{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.8px;color:var(--gris);margin-bottom:5px;font-weight:600}
+.cf-group input,.cf-group textarea{width:100%;padding:10px 13px;border:1.5px solid var(--gris-clair);border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border .2s;background:#fff;color:var(--noir)}
+.cf-group input:focus,.cf-group textarea:focus{border-color:var(--or)}
+.cf-group textarea{resize:vertical;min-height:90px}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cf-required{color:var(--rouge)}
+
+/* Preview message */
+.msg-preview{background:#f8f5f0;border:1px dashed #d4c49a;border-radius:10px;padding:12px 14px;font-size:.8rem;color:#555;line-height:1.55;margin-bottom:16px;white-space:pre-wrap}
+.msg-preview strong{color:var(--noir)}
+
+/* RGPD box */
+.rgpd-box{background:#fff9ee;border:1px solid #e8d5a8;border-radius:10px;padding:14px 16px;margin-bottom:16px}
+.rgpd-box .rgpd-title{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#b8900a;margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.rgpd-box p{font-size:.75rem;color:#6b5a2a;line-height:1.55;margin-bottom:6px}
+.rgpd-box p:last-child{margin-bottom:0}
+.rgpd-box a{color:#b8900a;text-decoration:underline}
+.rgpd-check{display:flex;align-items:flex-start;gap:9px;margin-bottom:14px}
+.rgpd-check input[type=checkbox]{width:16px;height:16px;margin-top:2px;cursor:pointer;accent-color:var(--or);flex-shrink:0}
+.rgpd-check label{font-size:.8rem;color:#444;cursor:pointer;line-height:1.45}
+.rgpd-check label a{color:var(--or);text-decoration:underline}
+
+/* Boutons envoi */
+.contact-send-row{display:flex;gap:10px}
+.btn-send{flex:1;padding:13px;background:var(--or);color:var(--noir);border:none;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s,transform .1s;display:flex;align-items:center;justify-content:center;gap:7px}
+.btn-send:hover:not(:disabled){background:var(--or-clair);transform:translateY(-1px)}
+.btn-send:disabled{opacity:.45;cursor:not-allowed}
+.btn-send-cancel{padding:13px 18px;background:none;border:1.5px solid var(--gris-clair);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:.9rem;cursor:pointer;transition:border-color .2s;color:#555}
+.btn-send-cancel:hover{border-color:var(--or)}
+
+/* Succès */
+.contact-success{text-align:center;padding:32px 24px}
+.contact-success .success-icon{font-size:3rem;margin-bottom:14px}
+.contact-success h4{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px}
+.contact-success p{color:var(--gris);font-size:.88rem;line-height:1.6}
+.contact-success .btn-close-success{margin-top:20px;padding:12px 28px;background:var(--noir);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+.contact-success .btn-close-success:hover{background:var(--or);color:var(--noir)}
+
+@media(max-width:700px){
+  header{padding:0 16px}
+  .hero{padding:50px 16px 40px}
+  .tabs-section,.quick-filters,.properties-section,.map-section,.fav-section{padding-left:16px;padding-right:16px}
+  .properties-grid{grid-template-columns:1fr}
+  .modal-specs{grid-template-columns:1fr}
+  .matcher-grid{grid-template-columns:1fr 1fr}
+  .admin-panel{width:100%;right:-100%}
+  .photo-preview-grid{grid-template-columns:repeat(3,1fr)}
+  .contact-type-grid{grid-template-columns:1fr 1fr}
+  .cf-row{grid-template-columns:1fr}
+  .contact-modal-body{padding:18px 16px}
+  .contact-modal-header{padding:18px 16px 14px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">GB<span>.</span>Immobilier</div>
+  <div class="header-contact">
+    <strong>03.25.09.46.52</strong>
+    59 av. de la République · Saint-Dizier 52100
+  </div>
+</header>
+<section class="hero">
+  <h1>Trouvez le bien<br>qui vous <em>correspond</em></h1>
+  <p>46 annonces disponibles — location, vente &amp; commerce à Saint-Dizier et alentours</p>
+  <div class="matcher-box">
+    <div class="matcher-title">✦ Votre recherche idéale — calculez votre compatibilité</div>
+    <div class="matcher-grid">
+      <div class="matcher-field"><label>Type de projet</label>
+        <select id="m-type"><option value="">Tous</option><option value="location">Location</option><option value="vente">Achat / Vente</option><option value="commerce">Commerce / Bureau</option></select>
+      </div>
+      <div class="matcher-field"><label>Type de bien</label>
+        <select id="m-bien"><option value="">Tous</option><option value="appartement">Appartement</option><option value="maison">Maison</option><option value="duplex">Duplex / Triplex</option><option value="immeuble">Immeuble</option><option value="local">Local / Bureau</option></select>
+      </div>
+      <div class="matcher-field"><label>Budget max (€)</label><input type="number" id="m-budget" placeholder="ex: 700" min="0" step="50"></div>
+      <div class="matcher-field"><label>Surface min (m²)</label><input type="number" id="m-surface" placeholder="ex: 50" min="0" step="5"></div>
+      <div class="matcher-field"><label>Pièces min</label>
+        <select id="m-pieces"><option value="">Peu importe</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option><option value="5">5+</option></select>
+      </div>
+      <div class="matcher-field"><label>Quartier / Ville</label>
+        <select id="m-ville"><option value="">Partout</option><option value="centre">Centre-ville</option><option value="marnaval">Marnaval</option><option value="tambourine">La Tambourine</option><option value="chancenay">Chancenay</option></select>
+      </div>
+    </div>
+    <button class="btn-match" onclick="runMatcher()">🔍 Calculer ma compatibilité avec chaque bien</button>
+  </div>
+</section>
+<div class="tabs-section">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('grid',this)">🏠 Tous les biens <span class="tab-count" id="cnt-all">0</span></button>
+    <button class="tab-btn" onclick="switchTab('map',this)">🗺️ Carte interactive</button>
+    <button class="tab-btn" onclick="switchTab('fav',this)">❤️ Mes favoris <span class="tab-count" id="cnt-fav">0</span></button>
+  </div>
+</div>
+<div class="quick-filters" id="quickFilters">
+  <button class="qf-btn active" onclick="filterCat('all',this)">Tous</button>
+  <button class="qf-btn" onclick="filterCat('location',this)">📍 Locations</button>
+  <button class="qf-btn" onclick="filterCat('vente',this)">🏡 Ventes</button>
+  <button class="qf-btn" onclick="filterCat('commerce',this)">🏢 Commerces</button>
+  <button class="qf-btn" onclick="filterCat('baisse',this)">📉 Baisse de prix</button>
+</div>
+<div class="count-bar" id="countBar"></div>
+<section class="properties-section" id="gridSection">
+  <div class="properties-grid" id="propertiesGrid"></div>
+</section>
+<section class="map-section" id="mapSection">
+  <div class="map-wrapper">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42712.6!2d4.9008!3d48.6378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47edf6c2a3f05777%3A0x40b82c3688c2640!2sSaint-Dizier%2C%2052100!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Saint-Dizier — GB Immobilier"></iframe>
+  </div>
+  <div class="map-legend">
+    <span><span class="dot dot-loc"></span> Location</span>
+    <span><span class="dot dot-vte"></span> Vente</span>
+    <span><span class="dot dot-com"></span> Commerce</span>
+    <span class="map-info">📍 GB Immobilier · 59 av. de la République, Saint-Dizier · <a href="https://www.google.com/maps/search/GB+Immobilier+Saint-Dizier" target="_blank" style="color:var(--or)">Ouvrir dans Google Maps →</a></span>
+  </div>
+</section>
+<section class="fav-section" id="favSection">
+  <div id="favGrid" class="properties-grid"></div>
+  <div class="empty-fav" id="emptyFav"><div class="big-heart">🤍</div><p>Aucun favori.<br>Cliquez sur le ❤️ de chaque bien pour l'ajouter ici.</p></div>
+</section>
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <div id="modal-gallery-wrap"></div>
+    <div class="modal-header">
+      <div><h2 id="modal-title"></h2><div style="font-size:.82rem;color:var(--gris);margin-top:4px" id="modal-loc"></div></div>
+      <button class="modal-close-btn" onclick="document.getElementById('modalOverlay').classList.remove('open')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-price" id="modal-price"></div>
+      <div class="modal-specs" id="modal-specs"></div>
+      <div id="modal-desc" style="color:#555;font-size:.9rem;line-height:1.6"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-contact" id="modal-contact-btn" onclick="openContactModal()">✉️ Nous contacter</button>
+      <a class="btn-primary" id="modal-link" href="#" target="_blank">Voir sur LeBonCoin</a>
+      <button class="btn-secondary" onclick="document.getElementById('modalOverlay').classList.remove('open')">Fermer</button>
+    </div>
+  </div>
+</div>
+<!-- ═══ MODAL CONTACT RGPD ═══ -->
+<div class="contact-overlay" id="contactOverlay" onclick="closeContactIfBg(event)">
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-modal-header">
+      <div>
+        <h3>✉️ Nous contacter</h3>
+        <p>GB Immobilier · contact@gbi52.fr</p>
+      </div>
+      <button class="contact-modal-close" onclick="closeContact()">✕</button>
+    </div>
+    <div class="contact-modal-body" id="contactModalBody">
+      <!-- rempli par JS -->
+    </div>
+  </div>
+</div>
+
+<div class="gallery-modal" id="galleryModal">
+  <button class="gallery-modal-close" onclick="closeGalleryModal()">✕</button>
+  <img class="gallery-modal-img" id="galleryModalImg" src="" alt="">
+  <div class="gallery-modal-nav">
+    <button class="gallery-modal-btn" onclick="galleryModalNav(-1)">‹</button>
+    <span class="gallery-modal-counter" id="galleryModalCounter">1 / 1</span>
+    <button class="gallery-modal-btn" onclick="galleryModalNav(1)">›</button>
+  </div>
+  <div class="gallery-modal-thumbs" id="galleryModalThumbs"></div>
+</div>
+<button class="admin-trigger" onclick="openAdminLogin()" title="Accès administration">🔑</button>
+<div class="admin-login-overlay" id="adminLoginOverlay">
+  <div class="admin-login-box">
+    <h2>🔐 Administration</h2>
+    <p>Accès réservé à GB Immobilier</p>
+    <input type="password" id="adminPwdInput" placeholder="Mot de passe" onkeydown="if(event.key==='Enter')checkAdminPwd()">
+    <div class="err" id="adminErr"></div>
+    <button class="btn-login" onclick="checkAdminPwd()">Accéder au panneau admin</button>
+    <button class="btn-cancel" onclick="closeAdminLogin()">Annuler</button>
+  </div>
+</div>
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-panel-header">
+    <h3>⚙️ Administration</h3>
+    <button class="admin-close" onclick="closeAdmin()">✕</button>
+  </div>
+  <div class="admin-tabs">
+    <button class="admin-tab active" onclick="adminSwitchTab('list',this)">📋 Mes biens</button>
+    <button class="admin-tab" onclick="adminSwitchTab('add',this)">➕ Ajouter</button>
+    <button class="admin-tab" onclick="adminSwitchTab('settings',this)">⚙️ Réglages</button>
+  </div>
+  <div class="admin-content" id="adminContent"></div>
+</div>
+<div class="toast" id="toast"></div>
+<footer>
+  <strong>GB Immobilier</strong> — Agence de proximité à Saint-Dizier<br>
+  59 avenue de la République · 52100 Saint-Dizier<br>
+  Tél. <a href="tel:0325094652">03.25.09.46.52</a> ·
+  <a href="http://www.gbi52.fr" target="_blank">www.gbi52.fr</a> ·
+  <a href="https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm" target="_blank">Notre boutique LeBonCoin</a><br>
+  <span style="font-size:.75rem;color:#555;margin-top:8px;display:block;">SIREN : 792990855 · Lun–Ven 9h–12h / 14h–17h30</span>
+</footer>
+<script>
+const ADMIN_PASSWORD = "GBimmo2024!";
+const DEFAULT_PROPERTIES = [
+  {id:1,ref:"GP2B",title:"Appartement 5 pièces 114 m²",type:"location",bien:"appartement",pieces:5,surface:114,price:920,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/ad/locations/3203116405",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/6c/3d/ae/6c3dae0b604fef4073fe5c5552b8c399ea5e870e.jpg?rule=ad-image",photos:[],tags:["5 pièces","114 m²","Terrasse","Piscine","Parking"],desc:"Résidence sécurisée avec piscine, tennis et parc enfants. Appartement F5 de 114 m² avec terrasse et garage. 4 chambres, ascenseur. Construit 1989."},
+  {id:2,ref:"CB3M",title:"Duplex 6 pièces 94 m²",type:"location",bien:"duplex",pieces:6,surface:94,price:1000,unit:"€/mois",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Location",badgeClass:"badge-location",baisse:true,link:"https://www.leboncoin.fr/ad/locations/2928635835",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/93/5a/c4/935ac41dc3d74f303df3dc8f7685371749db8855.jpg?rule=ad-image",photos:[],tags:["Duplex","6 pièces","Meublé","Centre"],desc:"Duplex 6 pièces entièrement rénové et meublé, 94 m², centre-ville. Idéal famille ou colocation. Aussi disponible non meublé."},
+  {id:3,ref:"LR4",title:"Appartement 2 pièces 34 m²",type:"location",bien:"appartement",pieces:2,surface:34,price:425,unit:"€/mois",location:"Saint-Dizier · La Tambourine",quartier:"tambourine",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/ad/locations/3184040298",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/13/07/c7/1307c7e8396287b21da1bba89e5a1d5a7b02c8bc.jpg?rule=ad-image",photos:[],tags:["2 pièces","34 m²","Rénové","Cuisine équipée"],desc:"F2 entièrement rénové, 34 m², 2e étage. Cuisine neuve équipée, grande chambre avec placard, salle d'eau douche. Chauffage électrique."},
+  {id:4,ref:"ARL3",title:"Appartement 2 pièces 38 m²",type:"location",bien:"appartement",pieces:2,surface:38,price:410,unit:"€/mois",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/ad/locations/3191942635",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/1d/8c/f1/1d8cf18eb3b3c08875bf9f4b2a99d87654403e16.jpg?rule=ad-image",photos:[],tags:["2 pièces","38 m²","Meublé","DPE C"],desc:"Appartement 2 pièces 38 m² loué meublé DPE C, centre-ville. Séjour avec cuisine équipée, chauffage électrique."},
+  {id:5,ref:"GPH",title:"Triplex 3 pièces 94 m²",type:"location",bien:"duplex",pieces:3,surface:94,price:700,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/ad/locations/3191942637",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/4b/bb/90/4bbb900fa64147495ced81f740b2a9e7344ffc55.jpg?rule=ad-image",photos:[],tags:["Triplex","3 pièces","94 m²","Vue canal"],desc:"Triplex rare 94 m², vue canal, piste cyclable. Cour privée portail électrique, 2 chambres, sdb, chauffage gaz."},
+  {id:6,ref:"GAM",title:"Appartement 2 pièces 47 m²",type:"location",bien:"appartement",pieces:2,surface:47,price:475,unit:"€/mois",location:"Saint-Dizier · La Tambourine",quartier:"tambourine",badge:"Location",badgeClass:"badge-location",baisse:true,link:"https://www.leboncoin.fr/ad/locations/3164459283",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/f0/13/93/f0139378bfac147f0cc66bb5bf55ea4267db0445.jpg?rule=ad-image",photos:[],tags:["2 pièces","47 m²","Balcon sud","Parking","Cave"],desc:"F2 47 m² 4e étage, balcon plein sud, parking privé, cave. Cuisine équipée séparée, chauffage électrique."},
+  {id:7,ref:"VCBR",title:"Immeuble 275 m² — Chancenay",type:"vente",bien:"immeuble",pieces:null,surface:275,price:252000,unit:"€",location:"Chancenay · 52100",quartier:"chancenay",badge:"Vente",badgeClass:"badge-vente",baisse:false,link:"https://www.leboncoin.fr/ad/ventes_immobilieres/3185194648",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/50/bc/f4/50bcf4233fe0aafb1e79cd212a41be5be75199c0.jpg?rule=ad-image",photos:[],tags:["Immeuble","275 m²","4 apparts","Grange","Jardins"],desc:"Immeuble entièrement loué, 4 appartements + grange motorisée + jardins individuels. Parcelle 796 m² sur axe Saint-Dizier/Bar-le-Duc."},
+  {id:8,ref:"ARGL",title:"Local commercial 22 m²",type:"commerce",bien:"local",pieces:null,surface:22,price:290,unit:"€/mois",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Commerce",badgeClass:"badge-commerce",baisse:true,link:"https://www.leboncoin.fr/ad/bureaux_commerces/3206029287",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/98/a1/5f/98a15ff021127607af1d9dc9263f77954d109188.jpg?rule=ad-image",photos:[],tags:["Local","22 m²","Vitrine rue","Avenue République"],desc:"Local 22 m² avenue de la République, vitrine sur rue, belle luminosité. Proximité banques, commerces, arrêts bus. Espace lavabo. Baisse de prix."},
+  {id:9,ref:"BBD122L",title:"Local commercial 430 m²",type:"commerce",bien:"local",pieces:null,surface:430,price:1800,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Commerce",badgeClass:"badge-commerce",baisse:true,link:"https://www.leboncoin.fr/ad/bureaux_commerces/3019053359",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/4e/1b/64/4e1b648f3d6c7855bec26f96dc857624cf1b87c7.jpg?rule=ad-image",photos:[],tags:["Local","430 m²","Bureaux+Entrepôt","Climatisation"],desc:"Local 430 m² : bureaux 110 m² + entrepôt 320 m² avec 3 portes sectionnelles. Climatisation, vestiaire, sanitaires. Proche zone Chêne St Amand. Construit 2004."},
+  {id:10,ref:"BBA220L",title:"Local commercial 220 m²",type:"commerce",bien:"local",pieces:null,surface:220,price:1110,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Commerce",badgeClass:"badge-commerce",baisse:true,link:"https://www.leboncoin.fr/ad/bureaux_commerces/3092745961",img:"https://img.leboncoin.fr/api/v1/lbcpb1/images/76/b3/73/76b37360174cbb5a12fe9f10af8dfb172c616ec7.jpg?rule=ad-image",photos:[],tags:["Local","220 m²","2 bureaux","Atelier","Douche"],desc:"Local 220 m² : 2 bureaux, salle de réunion, salle d'archives, atelier/entrepôt + grande porte sectionnelle, 2 WC, douche. Idéal artisan, formation, transporteur."},
+  {id:11,ref:"AUTO-011",title:"Appartement 3 pièces 65 m²",type:"location",bien:"appartement",pieces:3,surface:65,price:560,unit:"€/mois",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["3 pièces","65 m²","Lumineux"],desc:"Appartement 3 pièces lumineux en centre-ville."},
+  {id:12,ref:"AUTO-012",title:"Appartement 4 pièces 80 m²",type:"location",bien:"appartement",pieces:4,surface:80,price:680,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Location",badgeClass:"badge-location",baisse:true,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["4 pièces","80 m²","Balcon"],desc:"Appartement 4 pièces avec balcon à Marnaval."},
+  {id:13,ref:"AUTO-013",title:"Maison 4 pièces 90 m²",type:"location",bien:"maison",pieces:4,surface:90,price:750,unit:"€/mois",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Maison","4 pièces","Jardin"],desc:"Maison 4 pièces avec jardin à Saint-Dizier."},
+  {id:14,ref:"AUTO-014",title:"Duplex 4 pièces 85 m²",type:"location",bien:"duplex",pieces:4,surface:85,price:720,unit:"€/mois",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Location",badgeClass:"badge-location",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Duplex","4 pièces","85 m²"],desc:"Duplex 4 pièces sur 2 niveaux en centre-ville."},
+  {id:15,ref:"AUTO-015",title:"Maison 5 pièces 120 m²",type:"vente",bien:"maison",pieces:5,surface:120,price:145000,unit:"€",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Vente",badgeClass:"badge-vente",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Maison","5 pièces","Garage","Jardin"],desc:"Maison 120 m² avec jardin et garage double, secteur calme."},
+  {id:16,ref:"AUTO-016",title:"Appartement 3 pièces 68 m²",type:"vente",bien:"appartement",pieces:3,surface:68,price:72000,unit:"€",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Vente",badgeClass:"badge-vente",baisse:true,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["3 pièces","68 m²","Baisse de prix"],desc:"Appartement 3 pièces centre-ville, baisse de prix."},
+  {id:17,ref:"AUTO-017",title:"Maison 4 pièces 95 m²",type:"vente",bien:"maison",pieces:4,surface:95,price:118000,unit:"€",location:"Saint-Dizier · Marnaval",quartier:"marnaval",badge:"Vente",badgeClass:"badge-vente",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Maison","4 pièces","Terrasse"],desc:"Maison 4 pièces avec terrasse privative à Marnaval."},
+  {id:18,ref:"AUTO-018",title:"Immeuble 180 m²",type:"vente",bien:"immeuble",pieces:null,surface:180,price:165000,unit:"€",location:"Saint-Dizier · Centre-ville",quartier:"centre",badge:"Vente",badgeClass:"badge-vente",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Immeuble","180 m²","3 apparts"],desc:"Immeuble 3 appartements en centre-ville, excellent rendement locatif."},
+  {id:19,ref:"AUTO-019",title:"Maison de village 6 pièces 140 m²",type:"vente",bien:"maison",pieces:6,surface:140,price:98000,unit:"€",location:"Chancenay · 52100",quartier:"chancenay",badge:"Vente",badgeClass:"badge-vente",baisse:true,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["Maison","6 pièces","Grand terrain"],desc:"Grande maison de village 140 m² avec terrain 600 m² à Chancenay."},
+  {id:20,ref:"AUTO-020",title:"Appartement 2 pièces 45 m²",type:"vente",bien:"appartement",pieces:2,surface:45,price:49000,unit:"€",location:"Saint-Dizier · La Tambourine",quartier:"tambourine",badge:"Vente",badgeClass:"badge-vente",baisse:false,link:"https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm",img:null,photos:[],tags:["2 pièces","45 m²","Investisseur"],desc:"Appartement 2 pièces prix attractif, idéal investisseur."}
+];
+let properties=[];
+let favorites=new Set();
+let matchScores={};
+let currentCat='all';
+let currentTab='grid';
+let adminTab='list';
+let adminEditId=null;
+let adminLoggedIn=false;
+let formPhotos=[];
+let formMainPhotoIdx=0;
+let gmPhotos=[];
+let gmIdx=0;
+function saveData(){try{localStorage.setItem('gbimmo_properties',JSON.stringify(properties));}catch(e){}}
+function loadData(){
+  try{
+    const saved=localStorage.getItem('gbimmo_properties');
+    if(saved){properties=JSON.parse(saved);properties.forEach(p=>{if(!p.photos)p.photos=[];});return;}
+  }catch(e){}
+  properties=JSON.parse(JSON.stringify(DEFAULT_PROPERTIES));
+  saveData();
+}
+function nextId(){return properties.length?Math.max(...properties.map(p=>p.id))+1:1;}
+function fmtPrice(p,u){return new Intl.NumberFormat('fr-FR').format(p)+' '+u;}
+function typeToEmoji(t){return t==='location'?'🏠':t==='vente'?'🏡':'🏢';}
+function typeLabel(t){return t==='location'?'Location':t==='vente'?'Vente':'Commerce';}
+function typeBadge(t){return t==='location'?'badge-location':t==='vente'?'badge-vente':'badge-commerce';}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+function getAllPhotos(prop){const own=(prop.photos||[]).filter(Boolean);if(own.length)return own;if(prop.img)return[prop.img];return[];}
+function openGalleryModal(photos,startIdx){gmPhotos=photos;gmIdx=startIdx||0;document.getElementById('galleryModal').classList.add('open');renderGalleryModal();}
+function closeGalleryModal(){document.getElementById('galleryModal').classList.remove('open');}
+function renderGalleryModal(){
+  document.getElementById('galleryModalImg').src=gmPhotos[gmIdx];
+  document.getElementById('galleryModalCounter').textContent=(gmIdx+1)+' / '+gmPhotos.length;
+  const thumbs=document.getElementById('galleryModalThumbs');
+  thumbs.innerHTML=gmPhotos.map((p,i)=>`<img class="gallery-thumb${i===gmIdx?' active':''}" src="${p}" onclick="gmGoTo(${i})">`).join('');
+}
+function gmGoTo(i){gmIdx=i;renderGalleryModal();}
+function galleryModalNav(dir){gmIdx=(gmIdx+dir+gmPhotos.length)%gmPhotos.length;renderGalleryModal();}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('galleryModal').classList.contains('open')){
+    if(e.key==='ArrowRight')galleryModalNav(1);
+    if(e.key==='ArrowLeft')galleryModalNav(-1);
+    if(e.key==='Escape')closeGalleryModal();
+  }
+});
+function favBtnHTML(id,score,isFav){
+  const R=18,C=2*Math.PI*R;
+  const hasPct=score!==undefined;
+  const pct=hasPct?score:0;
+  const ringColor=pct>=75?'#5cad7b':pct>=45?'#c8a96e':'#e05c5c';
+  const fillColor=isFav?'#e05c5c':(hasPct?ringColor:'#ccc');
+  const fillPct=hasPct?pct:(isFav?100:0);
+  const clipY=24-(24*fillPct/100);
+  const dashOff=hasPct?C-(C*pct/100):C;
+  const heart="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z";
+  const ringHTML=hasPct?`<svg class="ring-svg" viewBox="0 0 48 48"><circle class="ring-track" cx="24" cy="24" r="${R}"/><circle class="ring-fill" cx="24" cy="24" r="${R}" stroke="${ringColor}" stroke-dasharray="${C}" stroke-dashoffset="${dashOff}" transform="rotate(-90 24 24)"/></svg>`:'';
+  const pctHTML=hasPct?`<span class="pct-txt" style="color:${ringColor}">${pct}%</span>`:'';
+  return `<button class="fav-ring-btn${isFav?' liked':''}" onclick="toggleFav(${id})" title="${isFav?'Retirer des favoris':'Ajouter aux favoris'}">${ringHTML}<svg class="heart-svg" viewBox="0 0 24 24"><defs><clipPath id="cf${id}"><rect x="0" y="${clipY}" width="24" height="${24-clipY}"/></clipPath><clipPath id="ce${id}"><rect x="0" y="0" width="24" height="${clipY}"/></clipPath></defs><path d="${heart}" fill="#ddd"/><path d="${heart}" fill="${fillColor}" clip-path="url(#cf${id})"/><path d="${heart}" fill="none" stroke="${isFav?'#e05c5c':'#bbb'}" stroke-width="0.5"/></svg>${pctHTML}</button>`;
+}
+const cardGalleryIdx={};
+function renderCard(prop,ctx){
+  const score=matchScores[prop.id];
+  const isFav=favorites.has(prop.id);
+  const photos=getAllPhotos(prop);
+  const suffix=ctx||'';
+  let imgArea='';
+  if(photos.length>0){
+    const firstImg=photos[0];
+    const navHTML=photos.length>1?`<button class="gallery-nav prev" onclick="cardGalleryNav(event,${prop.id},'${suffix}',-1)">‹</button><button class="gallery-nav next" onclick="cardGalleryNav(event,${prop.id},'${suffix}',1)">›</button>`:'';
+    const dotsHTML=photos.length>1?`<div class="gallery-dots" id="dots-${prop.id}${suffix}">${photos.map((_,i)=>`<button class="gallery-dot${i===0?' active':''}" onclick="cardGalleryGoto(event,${prop.id},'${suffix}',${i})"></button>`).join('')}</div>`:'';
+    const countBadge=photos.length>1?`<span class="photo-count-badge">📷 ${photos.length}</span>`:'';
+    imgArea=`<div class="card-img-wrap" id="imgwrap-${prop.id}${suffix}"><img class="card-img" id="cardimg-${prop.id}${suffix}" src="${firstImg}" alt="${prop.title}" loading="lazy">${navHTML}${dotsHTML}${countBadge}</div>`;
+  }else{
+    imgArea=`<div class="card-img-wrap"><div class="card-img-placeholder">${typeToEmoji(prop.type)}<small>Aucune photo</small></div></div>`;
+  }
+  const baisseHTML=prop.baisse?`<span class="badge-baisse">📉 Prix baissé</span>`:'';
+  const tagsHTML=(prop.tags||[]).map(t=>`<span class="spec-tag">${t}</span>`).join('');
+  return `<div class="property-card ${prop.type}${prop.baisse?' baisse':''}" id="card-${prop.id}${suffix}" data-id="${prop.id}">${imgArea}<span class="card-badge ${prop.badgeClass}">${prop.badge}</span>${baisseHTML}${favBtnHTML(prop.id,score,isFav)}<div class="card-body"><div class="card-title">${prop.title}</div><div class="card-location">📍 ${prop.location}</div><div class="card-specs">${tagsHTML}</div><div class="card-price">${fmtPrice(prop.price,prop.unit)} <span>${prop.unit==='€'?'prix de vente':'cc'}</span></div></div><div class="card-footer"><span class="ref-label">Réf. ${prop.ref}</span><a class="btn-voir" href="${prop.link}" target="_blank" onclick="event.stopPropagation()">Voir →</a></div></div>`;
+}
+function cardGalleryNav(e,id,suffix,dir){e.stopPropagation();const prop=properties.find(p=>p.id===id);if(!prop)return;const photos=getAllPhotos(prop);if(!photos.length)return;const key=id+''+suffix;cardGalleryIdx[key]=((cardGalleryIdx[key]||0)+dir+photos.length)%photos.length;updateCardGallery(id,suffix,photos);}
+function cardGalleryGoto(e,id,suffix,idx){e.stopPropagation();const prop=properties.find(p=>p.id===id);if(!prop)return;const photos=getAllPhotos(prop);const key=id+''+suffix;cardGalleryIdx[key]=idx;updateCardGallery(id,suffix,photos);}
+function updateCardGallery(id,suffix,photos){const key=id+''+suffix;const idx=cardGalleryIdx[key]||0;const imgEl=document.getElementById('cardimg-'+id+suffix);if(imgEl)imgEl.src=photos[idx];const dotsEl=document.getElementById('dots-'+id+suffix);if(dotsEl)dotsEl.querySelectorAll('.gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===idx));}
+function attachEvents(container){container.querySelectorAll('.property-card').forEach(el=>{el.addEventListener('click',function(e){if(e.target.closest('.fav-ring-btn')||e.target.closest('.btn-voir')||e.target.closest('.gallery-nav')||e.target.closest('.gallery-dots'))return;openModal(parseInt(this.dataset.id));});});}
+function renderGrid(){const g=document.getElementById('propertiesGrid');g.innerHTML=properties.map(p=>renderCard(p)).join('');attachEvents(g);applyFilter(currentCat);document.getElementById('cnt-all').textContent=properties.filter(p=>currentCat==='all'||p.type===currentCat||(currentCat==='baisse'&&p.baisse)).length;}
+function filterCat(cat,btn){currentCat=cat;document.querySelectorAll('.qf-btn').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');applyFilter(cat);}
+function applyFilter(cat){let v=0;properties.forEach(p=>{const el=document.getElementById('card-'+p.id);if(!el)return;const show=cat==='all'||p.type===cat||(cat==='baisse'&&p.baisse);el.classList.toggle('hidden',!show);if(show)v++;});document.getElementById('countBar').innerHTML=`<strong>${v} bien${v>1?'s':''}</strong> affiché${v>1?'s':''}`;document.getElementById('cnt-all').textContent=v;}
+function switchTab(tab,btn){currentTab=tab;document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('gridSection').style.display=tab==='grid'?'block':'none';document.getElementById('mapSection').classList.toggle('active',tab==='map');document.getElementById('favSection').classList.toggle('active',tab==='fav');document.getElementById('quickFilters').style.display=tab==='grid'?'flex':'none';document.getElementById('countBar').style.display=tab==='grid'?'block':'none';if(tab==='fav')renderFav();}
+function toggleFav(id){if(favorites.has(id))favorites.delete(id);else favorites.add(id);document.getElementById('cnt-fav').textContent=favorites.size;const card=document.getElementById('card-'+id);if(card){const newHtml=renderCard(properties.find(p=>p.id===id));card.outerHTML=newHtml;attachEvents(document.getElementById('propertiesGrid'));applyFilter(currentCat);}if(currentTab==='fav')renderFav();}
+function renderFav(){const g=document.getElementById('favGrid'),e=document.getElementById('emptyFav');if(!favorites.size){g.style.display='none';e.style.display='block';return;}g.style.display='grid';e.style.display='none';g.innerHTML=properties.filter(p=>favorites.has(p.id)).map(p=>renderCard(p,'-fav')).join('');attachEvents(g);}
+function runMatcher(){
+  const mType=document.getElementById('m-type').value;
+  const mBien=document.getElementById('m-bien').value;
+  const mBudget=parseFloat(document.getElementById('m-budget').value)||0;
+  const mSurface=parseFloat(document.getElementById('m-surface').value)||0;
+  const mPieces=parseInt(document.getElementById('m-pieces').value)||0;
+  const mVille=document.getElementById('m-ville').value;
+  if(!mType&&!mBien&&!mBudget&&!mSurface&&!mPieces&&!mVille){alert('Renseignez au moins un critère.');return;}
+  matchScores={};
+  properties.forEach(p=>{
+    let s=0,t=0;
+    if(mType){t+=30;if(p.type===mType)s+=30;}
+    if(mBien){t+=20;if(p.bien===mBien)s+=20;}
+    if(mBudget>0){t+=25;if(p.price<=mBudget)s+=25;else if(p.price<=mBudget*1.15)s+=15;else if(p.price<=mBudget*1.3)s+=8;}
+    if(mSurface>0){t+=15;if(p.surface>=mSurface)s+=15;else if(p.surface>=mSurface*.85)s+=8;}
+    if(mPieces>0&&p.pieces!==null){t+=10;if(p.pieces>=mPieces)s+=10;}
+    if(mVille){t+=10;if(p.quartier===mVille)s+=10;}
+    matchScores[p.id]=t>0?Math.round((s/t)*100):0;
+  });
+  renderGrid();
+  if(currentTab!=='grid')document.querySelectorAll('.tab-btn')[0].click();
+  document.getElementById('gridSection').scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('countBar').innerHTML=`<strong>Compatibilité calculée !</strong> — Le cercle de chaque bien affiche votre % de correspondance`;
+}
+let modalGalleryIdx=0;
+let modalGalleryPhotos=[];
+function openModal(id){
+  const p=properties.find(x=>x.id===id);if(!p)return;
+  document.getElementById('modal-title').textContent=p.title;
+  document.getElementById('modal-loc').textContent='📍 '+p.location;
+  document.getElementById('modal-price').textContent=fmtPrice(p.price,p.unit);
+  document.getElementById('modal-link').href=p.link;
+  modalGalleryPhotos=getAllPhotos(p);
+  modalGalleryIdx=0;
+  const gw=document.getElementById('modal-gallery-wrap');
+  if(modalGalleryPhotos.length){
+    gw.innerHTML=`<div class="modal-gallery" id="modalGallery"><img class="modal-gallery-img" id="modalGalleryImg" src="${modalGalleryPhotos[0]}" alt="${p.title}">${modalGalleryPhotos.length>1?`<button class="modal-gallery-nav prev" onclick="modalGalleryNav(-1)">‹</button><button class="modal-gallery-nav next" onclick="modalGalleryNav(1)">›</button><div class="modal-gallery-dots" id="modalGalleryDots">${modalGalleryPhotos.map((_,i)=>`<button class="modal-gallery-dot${i===0?' active':''}" onclick="modalGalleryGoto(${i})"></button>`).join('')}</div><span class="modal-gallery-ctr" id="modalGalleryCtr">1 / ${modalGalleryPhotos.length}</span>`:''}<button class="modal-gallery-expand" onclick="openGalleryModal(modalGalleryPhotos,modalGalleryIdx)">⛶ Agrandir</button></div>`;
+  }else{
+    gw.innerHTML=`<div class="modal-gallery-placeholder">${typeToEmoji(p.type)}</div>`;
+  }
+  const sc=matchScores[p.id];
+  const specs=[p.surface?['Surface',p.surface+' m²']:null,p.pieces?['Pièces',p.pieces+' pièces']:null,['Type',p.badge],['Quartier',p.location.split('·')[1]?.trim()||'-'],p.baisse?['Prix','📉 Baisse de prix']:null,sc!==undefined?['Compatibilité',sc+'%']:null,['Référence',p.ref]].filter(Boolean);
+  document.getElementById('modal-specs').innerHTML=specs.map(([l,v])=>`<div class="modal-spec"><div class="modal-spec-label">${l}</div><div class="modal-spec-value">${v}</div></div>`).join('');
+  document.getElementById('modal-desc').textContent=p.desc;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function modalGalleryNav(dir){modalGalleryIdx=(modalGalleryIdx+dir+modalGalleryPhotos.length)%modalGalleryPhotos.length;document.getElementById('modalGalleryImg').src=modalGalleryPhotos[modalGalleryIdx];const ctr=document.getElementById('modalGalleryCtr');if(ctr)ctr.textContent=(modalGalleryIdx+1)+' / '+modalGalleryPhotos.length;document.getElementById('modalGalleryDots')?.querySelectorAll('.modal-gallery-dot').forEach((d,i)=>d.classList.toggle('active',i===modalGalleryIdx));}
+function modalGalleryGoto(idx){modalGalleryIdx=idx;modalGalleryNav(0);}
+function closeModal(e){if(e.target===document.getElementById('modalOverlay'))document.getElementById('modalOverlay').classList.remove('open');}
+function openAdminLogin(){if(adminLoggedIn){openAdminPanel();return;}document.getElementById('adminLoginOverlay').classList.add('open');document.getElementById('adminPwdInput').value='';document.getElementById('adminErr').textContent='';setTimeout(()=>document.getElementById('adminPwdInput').focus(),100);}
+function closeAdminLogin(){document.getElementById('adminLoginOverlay').classList.remove('open');}
+function checkAdminPwd(){const pwd=document.getElementById('adminPwdInput').value;if(pwd===ADMIN_PASSWORD){adminLoggedIn=true;closeAdminLogin();openAdminPanel();}else{document.getElementById('adminErr').textContent='❌ Mot de passe incorrect';document.getElementById('adminPwdInput').value='';document.getElementById('adminPwdInput').focus();}}
+function openAdminPanel(){document.getElementById('adminPanel').classList.add('open');renderAdminContent();}
+function closeAdmin(){document.getElementById('adminPanel').classList.remove('open');}
+function adminSwitchTab(tab,btn){adminTab=tab;adminEditId=null;document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderAdminContent();}
+function renderAdminContent(){const c=document.getElementById('adminContent');if(adminTab==='list')renderAdminList(c);else if(adminTab==='add'){formPhotos=[];formMainPhotoIdx=0;renderAdminForm(c,null);}else if(adminTab==='settings')renderAdminSettings(c);}
+function renderAdminList(c){
+  const loc=properties.filter(p=>p.type==='location').length;
+  const vte=properties.filter(p=>p.type==='vente').length;
+  const com=properties.filter(p=>p.type==='commerce').length;
+  let html=`<div class="admin-stats"><div class="stat-box"><div class="stat-n">${loc}</div><div class="stat-l">Locations</div></div><div class="stat-box"><div class="stat-n">${vte}</div><div class="stat-l">Ventes</div></div><div class="stat-box"><div class="stat-n">${com}</div><div class="stat-l">Commerces</div></div></div><div class="admin-section-title">Tous les biens <button class="btn-add-new" onclick="adminNewBien()">+ Nouveau bien</button></div><input class="admin-search" type="text" placeholder="🔍 Rechercher par titre ou référence..." oninput="filterAdminList(this.value)"><div id="adminBienList">`;
+  properties.forEach(p=>{
+    const photos=getAllPhotos(p);
+    const thumbHTML=photos.length?`<div class="admin-bien-thumb"><img src="${photos[0]}" alt=""></div>`:`<div class="admin-bien-thumb">${typeToEmoji(p.type)}</div>`;
+    const photoBadge=(p.photos&&p.photos.length)?`<span class="photo-badge">📷 ${p.photos.length} photo${p.photos.length>1?'s':''}</span>`:'';
+    html+=`<div class="admin-bien-item" id="ali-${p.id}">${thumbHTML}<div class="admin-bien-info"><div class="admin-bien-title">${p.title}</div><div class="admin-bien-meta"><span class="admin-bien-ref">${p.ref}</span><span>${fmtPrice(p.price,p.unit)}</span>${photoBadge}${p.baisse?'<span style="color:var(--rouge);font-size:.7rem">📉</span>':''}</div></div><div class="admin-bien-actions"><button class="btn-icon${p.baisse?' baisse-on':''}" onclick="toggleBaisse(${p.id})" title="${p.baisse?'Retirer baisse':'Marquer baisse'}">📉</button><button class="btn-icon" onclick="editBien(${p.id})" title="Modifier">✏️</button><button class="btn-icon del" onclick="deleteBien(${p.id})" title="Supprimer">🗑️</button></div></div>`;
+  });
+  html+='</div>';
+  c.innerHTML=html;
+}
+function filterAdminList(q){q=q.toLowerCase();properties.forEach(p=>{const el=document.getElementById('ali-'+p.id);if(!el)return;const match=p.title.toLowerCase().includes(q)||p.ref.toLowerCase().includes(q);el.style.display=match?'':'none';});}
+function adminNewBien(){adminEditId=null;formPhotos=[];formMainPhotoIdx=0;document.querySelectorAll('.admin-tab')[1].click();}
+function editBien(id){adminEditId=id;const p=properties.find(x=>x.id===id);formPhotos=p?[...(p.photos||[])]:[];formMainPhotoIdx=0;const tab=document.querySelectorAll('.admin-tab')[1];tab.textContent='✏️ Modifier';document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));tab.classList.add('active');adminTab='add';renderAdminForm(document.getElementById('adminContent'),p);}
+function renderAdminForm(c,p){
+  const isEdit=p!==null&&p!==undefined;
+  const t=p?p.type:'location';
+  const b=p?p.bien:'appartement';
+  const q=p?p.quartier:'centre';
+  const u=p?p.unit:'€/mois';
+  c.innerHTML=`<div style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:16px;color:#333">${isEdit?'✏️ Modifier le bien':'➕ Ajouter un nouveau bien'}</div>
+  <div class="form-group"><label>Référence annonce *</label><input id="f-ref" value="${p?p.ref:''}" placeholder="ex: GP2B"></div>
+  <div class="form-group"><label>Titre *</label><input id="f-title" value="${p?p.title:''}" placeholder="ex: Appartement 3 pièces 65 m²"></div>
+  <div class="form-row">
+    <div class="form-group"><label>Type de projet *</label><select id="f-type" onchange="updateUnit()"><option value="location"${t==='location'?' selected':''}>Location</option><option value="vente"${t==='vente'?' selected':''}>Vente</option><option value="commerce"${t==='commerce'?' selected':''}>Commerce / Bureau</option></select></div>
+    <div class="form-group"><label>Type de bien *</label><select id="f-bien"><option value="appartement"${b==='appartement'?' selected':''}>Appartement</option><option value="maison"${b==='maison'?' selected':''}>Maison</option><option value="duplex"${b==='duplex'?' selected':''}>Duplex / Triplex</option><option value="immeuble"${b==='immeuble'?' selected':''}>Immeuble</option><option value="local"${b==='local'?' selected':''}>Local / Bureau</option></select></div>
+  </div>
+  <div class="form-row">
+    <div class="form-group"><label>Prix *</label><input type="number" id="f-price" value="${p?p.price:''}" placeholder="ex: 650"></div>
+    <div class="form-group"><label>Unité</label><select id="f-unit"><option value="€/mois"${u==='€/mois'?' selected':''}>€/mois</option><option value="€"${u==='€'?' selected':''}>€ (vente)</option></select></div>
+  </div>
+  <div class="form-row">
+    <div class="form-group"><label>Surface (m²) *</label><input type="number" id="f-surface" value="${p?p.surface:''}" placeholder="ex: 65"></div>
+    <div class="form-group"><label>Nb de pièces</label><input type="number" id="f-pieces" value="${p&&p.pieces?p.pieces:''}" placeholder="ex: 3"></div>
+  </div>
+  <div class="form-group"><label>Localisation *</label><input id="f-location" value="${p?p.location:''}" placeholder="ex: Saint-Dizier · Centre-ville"></div>
+  <div class="form-group"><label>Quartier *</label><select id="f-quartier"><option value="centre"${q==='centre'?' selected':''}>Centre-ville / Gigny</option><option value="marnaval"${q==='marnaval'?' selected':''}>Marnaval</option><option value="tambourine"${q==='tambourine'?' selected':''}>La Tambourine / La Noue</option><option value="chancenay"${q==='chancenay'?' selected':''}>Chancenay</option></select></div>
+  <div class="form-group"><label>Lien LeBonCoin</label><input id="f-link" value="${p?p.link:'https://www.leboncoin.fr/boutique/15724/gb_immobilier.htm'}"></div>
+  <div class="form-group"><label>Tags (séparés par des virgules)</label><input id="f-tags" value="${p?(p.tags||[]).join(', '):''}" placeholder="ex: 3 pièces, 65 m², Balcon, Parking"></div>
+  <div class="form-group"><label>Description</label><textarea id="f-desc" rows="4">${p?p.desc:''}</textarea></div>
+  <div class="form-check"><input type="checkbox" id="f-baisse"${p&&p.baisse?' checked':''}><label for="f-baisse">📉 Marquer comme "Baisse de prix"</label></div>
+  <div class="photo-upload-section">
+    <div class="photo-upload-header"><span>📷 Photos du logement</span><small id="photoCountLabel">${formPhotos.length}/10 photos</small></div>
+    <div class="photo-drop-zone" id="photoDropZone">
+      <input type="file" accept="image/*" multiple onchange="handlePhotoUpload(event)" id="photoFileInput">
+      <div class="photo-drop-icon">📁</div>
+      <div class="photo-drop-text">Cliquez ou glissez vos photos ici</div>
+      <div class="photo-drop-sub">JPG, PNG, WEBP · max 5 Mo par photo · jusqu'à 10 photos</div>
+    </div>
+    <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+    <div class="photo-counter" id="photoCounter" style="display:none"></div>
+    <button class="url-photo-toggle" onclick="toggleUrlPhotoInput()">+ Ajouter par URL (LeBonCoin, etc.)</button>
+    <div id="urlPhotoInputWrap" style="display:none;margin-top:8px">
+      <div style="display:flex;gap:6px">
+        <input id="urlPhotoInput" type="url" placeholder="https://img.leboncoin.fr/..." style="flex:1;padding:9px 12px;border:1.5px solid var(--gris-clair);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:.85rem;outline:none" onfocus="this.style.borderColor='var(--or)'" onblur="this.style.borderColor='var(--gris-clair)'">
+        <button onclick="addUrlPhoto()" style="padding:9px 14px;background:var(--or);color:var(--noir);border:none;border-radius:8px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.82rem;white-space:nowrap">Ajouter</button>
+      </div>
+      <div style="font-size:.7rem;color:#aaa;margin-top:4px">Copiez l'URL d'une photo depuis LeBonCoin ou un autre site</div>
+    </div>
+  </div>
+  <button class="btn-save" onclick="saveBien()">${isEdit?'💾 Enregistrer les modifications':'✅ Ajouter le bien'}</button>
+  <button class="btn-cancel-form" onclick="adminSwitchTab('list',document.querySelectorAll('.admin-tab')[0])">Annuler</button>`;
+  const dz=document.getElementById('photoDropZone');
+  dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('dragover');});
+  dz.addEventListener('dragleave',()=>dz.classList.remove('dragover'));
+  dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('dragover');handleDroppedFiles(e.dataTransfer.files);});
+  renderPhotoPreview();
+}
+function toggleUrlPhotoInput(){const wrap=document.getElementById('urlPhotoInputWrap');wrap.style.display=wrap.style.display==='none'?'block':'none';}
+function addUrlPhoto(){const input=document.getElementById('urlPhotoInput');const url=input.value.trim();if(!url)return;if(formPhotos.length>=10){showToast('⚠️ Maximum 10 photos par bien');return;}formPhotos.push(url);input.value='';renderPhotoPreview();showToast('🖼️ Photo URL ajoutée');}
+function handlePhotoUpload(event){handleDroppedFiles(event.target.files);event.target.value='';}
+function handleDroppedFiles(fileList){
+  const files=Array.from(fileList).filter(f=>f.type.startsWith('image/'));
+  const remaining=10-formPhotos.length;
+  if(!files.length)return;
+  if(remaining<=0){showToast('⚠️ Maximum 10 photos par bien');return;}
+  const toProcess=files.slice(0,remaining);
+  let processed=0;
+  toProcess.forEach(file=>{
+    if(file.size>5*1024*1024){showToast(`⚠️ ${file.name} dépasse 5 Mo, ignorée`);processed++;if(processed===toProcess.length)renderPhotoPreview();return;}
+    const reader=new FileReader();
+    reader.onload=e=>{resizeImage(e.target.result,1200,900,0.82).then(resized=>{formPhotos.push(resized);processed++;if(processed===toProcess.length)renderPhotoPreview();});};
+    reader.readAsDataURL(file);
+  });
+}
+function resizeImage(dataUrl,maxW,maxH,quality){
+  return new Promise(resolve=>{
+    const img=new Image();
+    img.onload=()=>{
+      let w=img.width,h=img.height;
+      if(w>maxW||h>maxH){const ratio=Math.min(maxW/w,maxH/h);w=Math.round(w*ratio);h=Math.round(h*ratio);}
+      const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+      canvas.getContext('2d').drawImage(img,0,0,w,h);
+      resolve(canvas.toDataURL('image/jpeg',quality));
+    };
+    img.src=dataUrl;
+  });
+}
+function renderPhotoPreview(){
+  const grid=document.getElementById('photoPreviewGrid');
+  const counter=document.getElementById('photoCounter');
+  const countLabel=document.getElementById('photoCountLabel');
+  if(!grid)return;
+  if(countLabel)countLabel.textContent=formPhotos.length+'/10 photos';
+  if(!formPhotos.length){grid.innerHTML='';if(counter)counter.style.display='none';return;}
+  grid.innerHTML=formPhotos.map((src,i)=>`<div class="photo-preview-item${i===formMainPhotoIdx?' is-main':''}" id="pp-${i}"><img src="${src}" alt="Photo ${i+1}"><button class="remove-photo" onclick="removeFormPhoto(${i})" title="Supprimer">✕</button>${i===formMainPhotoIdx?`<span class="main-badge">✦ Principale</span>`:`<button class="set-main-btn" onclick="setMainPhoto(${i})">Principale</button>`}</div>`).join('');
+  if(counter){counter.style.display='block';counter.textContent=`${formPhotos.length} photo${formPhotos.length>1?'s':''} · La 1ère sera affichée sur la carte`;}
+}
+function removeFormPhoto(idx){formPhotos.splice(idx,1);if(formMainPhotoIdx>=formPhotos.length)formMainPhotoIdx=Math.max(0,formPhotos.length-1);renderPhotoPreview();}
+function setMainPhoto(idx){const photo=formPhotos.splice(idx,1)[0];formPhotos.unshift(photo);formMainPhotoIdx=0;renderPhotoPreview();showToast('✦ Photo principale mise à jour');}
+function updateUnit(){const t=document.getElementById('f-type')?.value;const u=document.getElementById('f-unit');if(u&&t)u.value=t==='vente'?'€':'€/mois';}
+function saveBien(){
+  const ref=document.getElementById('f-ref').value.trim();
+  const title=document.getElementById('f-title').value.trim();
+  const type=document.getElementById('f-type').value;
+  const bien=document.getElementById('f-bien').value;
+  const price=parseFloat(document.getElementById('f-price').value)||0;
+  const unit=document.getElementById('f-unit').value;
+  const surface=parseFloat(document.getElementById('f-surface').value)||0;
+  const piecesRaw=document.getElementById('f-pieces').value.trim();
+  const pieces=piecesRaw?parseInt(piecesRaw):null;
+  const location=document.getElementById('f-location').value.trim();
+  const quartier=document.getElementById('f-quartier').value;
+  const link=document.getElementById('f-link').value.trim();
+  const tagsRaw=document.getElementById('f-tags').value.trim();
+  const tags=tagsRaw?tagsRaw.split(',').map(t=>t.trim()).filter(Boolean):[];
+  const desc=document.getElementById('f-desc').value.trim();
+  const baisse=document.getElementById('f-baisse').checked;
+  if(!ref||!title||!price||!surface||!location){alert('Veuillez remplir tous les champs obligatoires (*).'); return;}
+  const badge=typeLabel(type);
+  const badgeClass=typeBadge(type);
+  const img=(formPhotos.length?formPhotos[0]:null);
+  if(adminEditId){const idx=properties.findIndex(p=>p.id===adminEditId);if(idx>=0)properties[idx]={...properties[idx],ref,title,type,bien,price,unit,surface,pieces,location,quartier,link,img,photos:[...formPhotos],tags,desc,baisse,badge,badgeClass};showToast('✅ Bien modifié avec succès !');}
+  else{const id=nextId();properties.push({id,ref,title,type,bien,price,unit,surface,pieces,location,quartier,link,img,photos:[...formPhotos],tags,desc,baisse,badge,badgeClass});showToast('✅ Bien ajouté avec succès !');}
+  saveData();renderGrid();adminEditId=null;formPhotos=[];formMainPhotoIdx=0;
+  const tab=document.querySelectorAll('.admin-tab')[0];tab.textContent='📋 Mes biens';adminSwitchTab('list',tab);
+}
+function toggleBaisse(id){const p=properties.find(x=>x.id===id);if(!p)return;p.baisse=!p.baisse;saveData();renderGrid();renderAdminContent();showToast(p.baisse?'📉 Baisse de prix activée':'Prix baissé retiré');}
+function deleteBien(id){const p=properties.find(x=>x.id===id);if(!p)return;if(!confirm(`Supprimer "${p.title}" (réf. ${p.ref}) ?\n\nCette action est irréversible.`))return;properties=properties.filter(x=>x.id!==id);saveData();renderGrid();renderAdminContent();showToast('🗑️ Bien supprimé');}
+function renderAdminSettings(c){
+  c.innerHTML=`<div style="font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:20px">⚙️ Réglages</div>
+  <div style="background:var(--fond);border-radius:12px;padding:16px;margin-bottom:16px">
+    <div style="font-weight:700;margin-bottom:8px;font-size:.9rem">🔐 Changer le mot de passe admin</div>
+    <div class="form-group"><label>Mot de passe actuel</label><input type="password" id="s-old" placeholder="Mot de passe actuel"></div>
+    <div class="form-group"><label>Nouveau mot de passe</label><input type="password" id="s-new" placeholder="Nouveau mot de passe"></div>
+    <div class="form-group"><label>Confirmer</label><input type="password" id="s-confirm" placeholder="Confirmer"></div>
+    <div id="s-msg" style="font-size:.82rem;min-height:18px;margin-bottom:8px"></div>
+    <button class="btn-save" onclick="changePwd()">Changer le mot de passe</button>
+  </div>
+  <div style="background:var(--fond);border-radius:12px;padding:16px;margin-bottom:16px">
+    <div style="font-weight:700;margin-bottom:8px;font-size:.9rem">💾 Données</div>
+    <div style="font-size:.82rem;color:var(--gris);margin-bottom:12px">${properties.length} biens · ${properties.reduce((s,p)=>(p.photos||[]).length+s,0)} photos stockées.</div>
+    <button onclick="exportData()" style="padding:10px 16px;border:1.5px solid var(--or);border-radius:8px;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--or);font-weight:600;margin-right:8px">📥 Exporter</button>
+    <button onclick="resetData()" style="padding:10px 16px;border:1.5px solid var(--rouge);border-radius:8px;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.85rem;color:var(--rouge);font-weight:600">🔄 Réinitialiser</button>
+  </div>
+  <div style="background:#fff7ed;border:1px solid #f9d09a;border-radius:12px;padding:16px;font-size:.82rem;line-height:1.6">
+    <strong>💡 Astuce photos :</strong> Les photos uploadées sont redimensionnées automatiquement et sauvegardées dans ce navigateur. Pour partager sur plusieurs postes, utilisez "Exporter" puis "Importer".
+  </div>`;
+}
+function changePwd(){const old=document.getElementById('s-old').value;const nw=document.getElementById('s-new').value;const conf=document.getElementById('s-confirm').value;const msg=document.getElementById('s-msg');if(old!==ADMIN_PASSWORD){msg.style.color='var(--rouge)';msg.textContent='❌ Mot de passe actuel incorrect';return;}if(!nw||nw.length<6){msg.style.color='var(--rouge)';msg.textContent='❌ Au moins 6 caractères';return;}if(nw!==conf){msg.style.color='var(--rouge)';msg.textContent='❌ Les mots de passe ne correspondent pas';return;}msg.style.color='var(--vert)';msg.textContent='⚠️ Modifiez la ligne ADMIN_PASSWORD dans le HTML : "'+nw+'"';}
+function exportData(){const json=JSON.stringify(properties,null,2);const blob=new Blob([json],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='gb-immobilier-biens.json';a.click();showToast('📥 Données exportées !');}
+function resetData(){if(!confirm('Réinitialiser tous les biens avec les données par défaut ?\n\nToutes vos photos et modifications seront perdues.'))return;properties=JSON.parse(JSON.stringify(DEFAULT_PROPERTIES));saveData();renderGrid();renderAdminContent();showToast('🔄 Données réinitialisées');}
+// ═══ MODAL CONTACT RGPD ═══
+let contactPropId = null;
+let contactMsgType = 'rapide'; // 'rapide' | 'personnalise'
+
+function openContactModal() {
+  // Récupère le bien actuellement ouvert dans la modal détail
+  const titleEl = document.getElementById('modal-title');
+  const locEl = document.getElementById('modal-loc');
+  const priceEl = document.getElementById('modal-price');
+  const propTitle = titleEl ? titleEl.textContent : '';
+  // Retrouver l'id depuis le titre
+  const prop = properties.find(p => p.title === propTitle);
+  contactPropId = prop ? prop.id : null;
+  contactMsgType = 'rapide';
+  document.getElementById('contactOverlay').classList.add('open');
+  renderContactForm();
+}
+
+function closeContact() {
+  document.getElementById('contactOverlay').classList.remove('open');
+}
+function closeContactIfBg(e) {
+  if(e.target === document.getElementById('contactOverlay')) closeContact();
+}
+
+function renderContactForm() {
+  const prop = contactPropId ? properties.find(p=>p.id===contactPropId) : null;
+  const body = document.getElementById('contactModalBody');
+
+  const chipHTML = prop ? `
+    <div class="contact-bien-chip">
+      <div class="contact-bien-chip-icon">${typeToEmoji(prop.type)}</div>
+      <div class="contact-bien-chip-info">
+        <div class="contact-bien-chip-title">${prop.title}</div>
+        <div class="contact-bien-chip-ref">Réf. ${prop.ref} · ${fmtPrice(prop.price, prop.unit)}</div>
+      </div>
+    </div>` : '';
+
+  body.innerHTML = `
+    ${chipHTML}
+
+    <div style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--gris);margin-bottom:10px">Type de message</div>
+    <div class="contact-type-grid">
+      <button class="contact-type-btn${contactMsgType==='rapide'?' selected':''}" onclick="setContactType('rapide')">
+        <div class="ctb-icon">⚡</div>
+        <div class="ctb-label">Message rapide</div>
+        <div class="ctb-sub">Généré automatiquement</div>
+      </button>
+      <button class="contact-type-btn${contactMsgType==='personnalise'?' selected':''}" onclick="setContactType('personnalise')">
+        <div class="ctb-icon">✍️</div>
+        <div class="ctb-label">Message libre</div>
+        <div class="ctb-sub">Rédigez votre texte</div>
+      </button>
+    </div>
+
+    <div class="cf-row">
+      <div class="cf-group"><label>Prénom <span class="cf-required">*</span></label><input id="cf-prenom" type="text" placeholder="Votre prénom" autocomplete="given-name"></div>
+      <div class="cf-group"><label>Nom <span class="cf-required">*</span></label><input id="cf-nom" type="text" placeholder="Votre nom" autocomplete="family-name"></div>
+    </div>
+    <div class="cf-group"><label>E-mail <span class="cf-required">*</span></label><input id="cf-email" type="email" placeholder="votre@email.fr" autocomplete="email" oninput="updatePreview()"></div>
+    <div class="cf-group"><label>Téléphone</label><input id="cf-tel" type="tel" placeholder="06 00 00 00 00" autocomplete="tel" oninput="updatePreview()"></div>
+
+    <div id="msg-personnalise-wrap" style="display:${contactMsgType==='personnalise'?'block':'none'}">
+      <div class="cf-group"><label>Votre message <span class="cf-required">*</span></label><textarea id="cf-msg" rows="4" placeholder="Décrivez votre demande, vos disponibilités pour une visite..." oninput="updatePreview()"></textarea></div>
+    </div>
+
+    <div style="font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--gris);margin-bottom:8px;margin-top:4px">Aperçu de l'e-mail qui sera envoyé</div>
+    <div class="msg-preview" id="msgPreview"></div>
+
+    <div class="rgpd-box">
+      <div class="rgpd-title">🛡️ Protection de vos données (RGPD)</div>
+      <p>Les informations que vous saisissez (nom, prénom, e-mail, téléphone) sont collectées <strong>uniquement</strong> dans le but de vous recontacter concernant votre demande immobilière.</p>
+      <p>Elles sont transmises directement à <strong>GB Immobilier</strong> (responsable de traitement, SIREN&nbsp;792990855) et ne sont pas stockées sur ce site ni partagées avec des tiers.</p>
+      <p>Conformément au <strong>RGPD (art.&nbsp;15–17)</strong>, vous pouvez exercer vos droits d'accès, rectification et suppression en écrivant à <a href="mailto:contact@gbi52.fr">contact@gbi52.fr</a>.</p>
+    </div>
+
+    <div class="rgpd-check">
+      <input type="checkbox" id="cf-rgpd" onchange="updateSendBtn()">
+      <label for="cf-rgpd">J'accepte que mes données personnelles soient transmises à GB Immobilier pour traiter ma demande. Je comprends que je peux exercer mes droits à tout moment en écrivant à <a href="mailto:contact@gbi52.fr">contact@gbi52.fr</a>. <span class="cf-required">*</span></label>
+    </div>
+
+    <div class="contact-send-row">
+      <button class="btn-send" id="btnSend" onclick="sendContactMail()" disabled>
+        <span>📨</span> Envoyer ma demande
+      </button>
+      <button class="btn-send-cancel" onclick="closeContact()">Annuler</button>
+    </div>
+    <div style="font-size:.7rem;color:#bbb;text-align:center;margin-top:10px">
+      Aucun cookie, aucun tracking. Votre message part directement dans votre client mail.
+    </div>`;
+
+  // Init oninput listeners après render
+  ['cf-prenom','cf-nom','cf-email','cf-tel','cf-msg'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.addEventListener('input',updatePreview);
+  });
+  updatePreview();
+}
+
+function setContactType(type) {
+  contactMsgType = type;
+  renderContactForm();
+}
+
+function buildMessage() {
+  const prop = contactPropId ? properties.find(p=>p.id===contactPropId) : null;
+  const prenom = (document.getElementById('cf-prenom')?.value||'').trim();
+  const nom = (document.getElementById('cf-nom')?.value||'').trim();
+  const email = (document.getElementById('cf-email')?.value||'').trim();
+  const tel = (document.getElementById('cf-tel')?.value||'').trim();
+  const msgPerso = (document.getElementById('cf-msg')?.value||'').trim();
+
+  const propLine = prop
+    ? `Bien concerné : ${prop.title} (Réf. ${prop.ref}) — ${fmtPrice(prop.price, prop.unit)}\n`
+    : '';
+
+  let contenu = '';
+  if(contactMsgType === 'rapide') {
+    contenu = `Bonjour,\n\nJe suis intéressé(e) par le bien suivant et souhaite obtenir plus d'informations ou convenir d'une visite.\n\n${propLine}`;
+  } else {
+    contenu = `Bonjour,\n\n${propLine}${msgPerso ? msgPerso+'\n' : ''}`;
+  }
+
+  const coordonnees = `\nMes coordonnées :\n  Nom : ${prenom} ${nom}${email?'\n  E-mail : '+email:''}${tel?'\n  Téléphone : '+tel:''}\n`;
+  const fin = `\nCordialement,\n${prenom} ${nom}`;
+  const rgpd = `\n\n---\nConsentement RGPD : En envoyant ce message, j'accepte que mes données personnelles (nom, e-mail, téléphone) soient utilisées par GB Immobilier dans le seul but de traiter ma demande immobilière, conformément au RGPD.`;
+
+  return contenu + coordonnees + fin + rgpd;
+}
+
+function updatePreview() {
+  const el = document.getElementById('msgPreview');
+  if(!el) return;
+  const msg = buildMessage();
+  el.textContent = msg;
+  updateSendBtn();
+}
+
+function updateSendBtn() {
+  const btn = document.getElementById('btnSend');
+  if(!btn) return;
+  const prenom = (document.getElementById('cf-prenom')?.value||'').trim();
+  const nom = (document.getElementById('cf-nom')?.value||'').trim();
+  const email = (document.getElementById('cf-email')?.value||'').trim();
+  const rgpd = document.getElementById('cf-rgpd')?.checked;
+  const msgOk = contactMsgType === 'rapide' || (document.getElementById('cf-msg')?.value||'').trim().length > 2;
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  btn.disabled = !(prenom && nom && emailOk && rgpd && msgOk);
+}
+
+function sendContactMail() {
+  const prop = contactPropId ? properties.find(p=>p.id===contactPropId) : null;
+  const prenom = (document.getElementById('cf-prenom')?.value||'').trim();
+  const nom = (document.getElementById('cf-nom')?.value||'').trim();
+  const email = (document.getElementById('cf-email')?.value||'').trim();
+
+  const subject = prop
+    ? `Demande d'information — ${prop.title} (Réf. ${prop.ref})`
+    : `Demande d'information — GB Immobilier`;
+
+  const body = buildMessage();
+
+  // Ouvre le client mail natif
+  const mailto = `mailto:contact@gbi52.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&from=${encodeURIComponent(email)}`;
+  window.location.href = mailto;
+
+  // Afficher l'écran de succès
+  setTimeout(()=>{
+    const bodyEl = document.getElementById('contactModalBody');
+    bodyEl.innerHTML = `
+      <div class="contact-success">
+        <div class="success-icon">✅</div>
+        <h4>Votre message est prêt !</h4>
+        <p>Votre client mail s'est ouvert avec le message pré-rempli.<br>
+        Vérifiez-le et cliquez sur <strong>Envoyer</strong> dans votre application mail.<br><br>
+        À défaut, écrivez-nous directement à <a href="mailto:contact@gbi52.fr" style="color:var(--or)">contact@gbi52.fr</a><br>
+        ou appelez le <a href="tel:0325094652" style="color:var(--or)">03.25.09.46.52</a>.</p>
+        <button class="btn-close-success" onclick="closeContact()">Fermer</button>
+      </div>`;
+  }, 600);
+}
+
+loadData();
+renderGrid();
+</script>
+</body>
+</html>
